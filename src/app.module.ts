@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CategoriaModule } from './categoria/categoria.module';
 import { Categoria } from './categoria/entities/categoria.entity';
+import { Usuario } from './usuario/entities/usuario.entity';
+import { UsuarioModule } from './usuario/usuario.module';
 
 @Module({
   imports: [
@@ -11,11 +13,12 @@ import { Categoria } from './categoria/entities/categoria.entity';
       port: 3306,
       username: 'root',
       password: 'root',
-      database: 'db_vida',
-      entities: [Categoria],
+      database: 'db_seguro_vida',
+      entities: [Usuario,Categoria],
       synchronize: true,
-      logging: true,
+      //logging: true, opcional
     }),
+    UsuarioModule,
     CategoriaModule,
   ],
   controllers: [],
