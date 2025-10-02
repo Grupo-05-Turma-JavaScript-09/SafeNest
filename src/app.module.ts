@@ -14,7 +14,7 @@ import { UsuarioModule } from './usuario/usuario.module';
       username: 'root',
       password: 'root',
       database: 'db_seguro_vida',
-      entities: [Usuario,Categoria],
+      entities: [Usuario, Categoria],
       synchronize: true,
       //logging: true, opcional
     }),
