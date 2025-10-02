@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Apolice } from "./apolice/entities/apolice.entity";
+import { ApoliceModule } from "./apolice/apolice.module";
 
 @Module({
   imports: [
@@ -9,11 +11,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       port: 3306,
       username: 'root',
       password: 'root',
-      database: 'db_vida',
-      entities: [],
+      database: 'db_seguro_vida',
+      entities: [Apolice],
       synchronize: true,
       logging: true,
     }),
+    ApoliceModule,
   ],
   controllers: [],
   providers: [],
